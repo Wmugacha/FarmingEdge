@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .btn {
+            margin: 1%;
+        }
+        .navbar {
+            background-color: black;
+            margin-bottom: 0%;
+        }
+
+        .row.content {
+            height: 1500px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #f1f1f1;
+            color: black;
+            padding: 50px;
+            margin-bottom: 50%;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">FarmingEdge</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <h2><small>Dashboard</small></h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1">Records</a></li>
+                    <li><a href="#section2">Reports</a></li>
+                    <li><a href="#section3">Weather</a></li>
+                    <li><a href="#section3">Reccomendations</a></li>
+                </ul><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search records..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-10">
+                <form class="form-inline container" action="/action_page.php">
+                    <div class="form-group">
+                        <label for="Field">Field</label>
+                        <input type="text" class="form-control" id="fld">
+                    </div>
+                    <div class="form-group">
+                        <label for="Crop">Crop</label>
+                        <input type="text" class="form-control" id="crp">
+                    </div>
+                    <div class="form-group">
+                        <label for="Harvest">Harvest</label>
+                        <input type="text" class="form-control" id="hvst">
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="text" class="form-control" id="dte">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <h3><small>ENTRIES</small></h3>
+                <table class="table table-stripped table-bordered table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Crop</th>
+                            <th>Harvest</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Maize</td>
+                            <td>16 Tonnes</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sorghum</td>
+                            <td>12.5 Tonnes</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Beans</td>
+                            <td>8 Tonnes</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
