@@ -82,22 +82,22 @@
             </div>
 
             <div class="col-sm-10">
-                <form class="form-inline container" action="/action_page.php">
+                <form class="form-inline container" action="{{ url_for('views.dashboard') }}" method="POST">
                     <div class="form-group">
-                        <label for="Field">Field</label>
-                        <input type="text" class="form-control" id="fld">
+                        <label for="field">Field</label>
+                        <input type="text" class="form-control" id="field" name="field">
+                    </div> 
+                    <div class="form-group">
+                        <label for="crop">Crop</label>
+                        <input type="text" class="form-control" id="crop" name="crop">
                     </div>
                     <div class="form-group">
-                        <label for="Crop">Crop</label>
-                        <input type="text" class="form-control" id="crp">
+                        <label for="harvest">Harvest</label>
+                        <input type="text" class="form-control" id="harvest" name="harvest">
                     </div>
                     <div class="form-group">
-                        <label for="Harvest">Harvest</label>
-                        <input type="text" class="form-control" id="hvst">
-                    </div>
-                    <div class="form-group">
-                        <label for="Date">Date</label>
-                        <input type="text" class="form-control" id="dte">
+                        <label for="date">Date</label>
+                        <input type="text" class="form-control" id="date" name="date">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
@@ -112,24 +112,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for crop in crops %}
+                        {% for field in crop.fields %}
+                        {% for harvest in field.harvests %}
                         <tr>
-                            <td>1</td>
-                            <td>Maize</td>
-                            <td>16 Tonnes</td>
-                            <td></td>
+                            <td>{{ field.name }}</td>
+                            <td>{{ crop.name }}</td>
+                            <td>{{ harvest.crop_yield }} Tonnes</td>
+                            <td>{{ harvest.date }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Sorghum</td>
-                            <td>12.5 Tonnes</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Beans</td>
-                            <td>8 Tonnes</td>
-                            <td></td>
-                        </tr>
+                        {% endfor %}
+                        {% endfor %}
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

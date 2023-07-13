@@ -77,7 +77,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">HOME</a></li>
                     <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>LOGIN</a></li>
-                    <li><a href="/Sign-up"><span class="glyphicon glyphicon-log-out"></span>REGISTER</a></li>
+                    <li><a href="/signup"><span class="glyphicon glyphicon-log-out"></span>REGISTER</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
@@ -95,7 +95,7 @@
 
     <div class="container">
         <h2>Register</h2>
-        <form class="form-horizontal" action="{{ url_for('auth.Signup') }}" method="POST">
+        <form class="form-horizontal" action="{{ url_for('auth.signup') }}" method="POST">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <div class="col-sm-10">
@@ -111,13 +111,15 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="password1">Enter Password:</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password1" placeholder="Enter password" name="password1">
+                    <input type="password" class="form-control" id="password1" placeholder="Enter password"
+                        name="password1">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="password2">Enter Password(confirm):</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password2" placeholder="Enter password" name="password2">
+                    <input type="password" class="form-control" id="password2" placeholder="Enter password"
+                        name="password2">
                 </div>
             </div>
             <div class="form-group">
@@ -134,6 +136,16 @@
             </div>
         </form>
     </div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
 </body>
 
