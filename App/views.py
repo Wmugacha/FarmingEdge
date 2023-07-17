@@ -6,11 +6,11 @@ from . import db
 import json
 views = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET', 'POST'])
+@views.route('/', strict_slashes=False, methods=['GET', 'POST'])
 def home():
     return render_template("home.html")
 
-@views.route('/dashboard', methods=['GET', 'POST'])
+@views.route('/dashboard', strict_slashes=False, methods=['GET', 'POST'])
 def dashboard():
     if request.method == 'POST':
         field = request.form.get('field')
