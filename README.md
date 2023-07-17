@@ -2,6 +2,8 @@
 
 ## FarmingEdge
 
+![Dashboard view](./Readme_Ss.jpg)
+
 ## Introduction
 
 Welcome to FarmingEdge! This project is aimed at revolutionizing agriculture by providing a comprehensive data management system for farmers. With FarmingEdge, farmers can easily collect, store, and analyze agricultural data to make informed decisions and optimize their farming practices.
